@@ -14,8 +14,6 @@ The end result is nearly always a faster build and runtime.
 
 ## Key features:
 
-### ES2015 / ES6
-
 * Versioning that tracks [Babel releases](https://github.com/babel/babel/releases)
 * React / JSX support (via [babel-preset-react](https://www.npmjs.com/package/babel-preset-react))
 * Strict mode, to enable Classes and `let` (via [babel-plugin-transform-strict-mode](https://www.npmjs.com/package/babel-plugin-transform-strict-mode))
@@ -24,7 +22,3 @@ The end result is nearly always a faster build and runtime.
 * Default and rest parameters (via [babel-plugin-transform-es2015-parameters](https://www.npmjs.com/package/babel-plugin-transform-es2015-parameters))
 * Sticky RegEx (via [babel-plugin-transform-es2015-sticky-regex](https://www.npmjs.com/package/babel-plugin-transform-es2015-sticky-regex))
 * Unicode RegEx (via [babel-plugin-transform-es2015-unicode-regex](https://www.npmjs.com/package/babel-plugin-transform-es2015-unicode-regex))
-
-### ES7
-
-* Async functions (async/await) via [babel-plugin-syntax-async-functions](https://www.npmjs.com/package/babel-plugin-syntax-async-functions)
