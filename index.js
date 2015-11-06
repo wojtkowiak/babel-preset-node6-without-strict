@@ -1,4 +1,7 @@
 /* global module */
+var presets = [
+  'babel-preset-react',
+];
 
 var plugins = [
   'babel-plugin-syntax-async-functions',
@@ -9,10 +12,13 @@ var plugins = [
   'babel-plugin-transform-es2015-unicode-regex',
   'babel-plugin-transform-strict-mode',
   'babel-polyfill',
-  'babel-preset-react',
 ];
 
 module.exports = {
+  presets: presets.map(function(preset) {
+      return require(preset);
+    }),
+
   plugins: plugins.map(function(plugin) {
     return require(plugin);
   }),
