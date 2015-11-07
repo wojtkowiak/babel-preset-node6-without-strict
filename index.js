@@ -10,6 +10,7 @@ var plugins = [
   'babel-plugin-transform-es2015-sticky-regex',
   'babel-plugin-transform-es2015-unicode-regex',
   'babel-plugin-transform-strict-mode',
+  'babel-plugin-transform-flow-strip-types'
 ];
 
 module.exports = {

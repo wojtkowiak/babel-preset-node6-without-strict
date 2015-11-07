@@ -10,7 +10,7 @@ that your Node 5.x installation can already do faster and natively, replacing th
 
 This preset complements existing V8-native functionality - it doesn't work _around_ it.
 
-The end result is nearly always a faster build and runtime.
+The end result is nearly always a faster build and script execution time.
 
 ## Key features:
 
