@@ -1,7 +1,7 @@
 {
   "name": "babel-preset-node5",
-  "version": "6.2.1",
-  "description": "Babel preset for Node 5.x (ES6, React, Flow)",
+  "version": "10.0.0",
+  "description": "Babel preset for Node 5.x (ES6 / ES2015)",
   "repository": "git://github.com/leebenson/babel-preset-node5.git",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "babel",
     "node5",
     "es2015",
-    "react"
+    "es6"
   ],
   "author": "Lee Benson <lee@leebenson.com>",
   "license": "MIT",
@@ -27,7 +27,6 @@
     "babel-plugin-transform-flow-strip-types": "^6.1.18",
     "babel-plugin-transform-object-rest-spread": "^6.1.18",
     "babel-plugin-transform-strict-mode": "^6.1.18",
-    "babel-polyfill": "^6.1.19",
-    "babel-preset-react": "^6.1.18"
+    "babel-polyfill": "^6.1.19"
   }
 }
