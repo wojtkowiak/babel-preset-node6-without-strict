@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-node5",
-  "version": "10.1.0",
+  "version": "10.1.1",
   "description": "Babel preset for Node 5.x (ES6 / ES2015)",
   "repository": "git://github.com/leebenson/babel-preset-node5.git",
   "main": "index.js",
@@ -21,7 +21,7 @@
     "babel-plugin-syntax-object-rest-spread": "^6.3.13",
     "babel-plugin-transform-es2015-destructuring": "^6.3.15",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.3.16",
-    "babel-plugin-transform-es2015-parameters": "^6.3.13",
+    "babel-plugin-transform-es2015-parameters": "^6.3.18",
     "babel-plugin-transform-es2015-sticky-regex": "^6.3.13",
     "babel-plugin-transform-es2015-unicode-regex": "^6.3.13",
     "babel-plugin-transform-flow-strip-types": "^6.3.15",
