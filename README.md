@@ -89,7 +89,7 @@ The async/await proposal allows you to wait on a Promise, and write asynchronous
 Here's an example:
 
 ```js
-function async getUsers(howMany) {
+async function getUsers(howMany) {
   try {
     const response = await fetch(`http://jsonplaceholder.typicode.com/users/${howMany}`); // <-- a Promise
     return response.json(); // <-- Another promise.
