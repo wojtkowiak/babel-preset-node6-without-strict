@@ -21,6 +21,7 @@ The end result is nearly always a faster build and script execution time.
 * Default and rest parameters (via [babel-plugin-transform-es2015-parameters](https://www.npmjs.com/package/babel-plugin-transform-es2015-parameters))
 * Sticky RegEx (via [babel-plugin-transform-es2015-sticky-regex](https://www.npmjs.com/package/babel-plugin-transform-es2015-sticky-regex))
 * Unicode RegEx (via [babel-plugin-transform-es2015-unicode-regex](https://www.npmjs.com/package/babel-plugin-transform-es2015-unicode-regex))
+* Async/await (via [babel-plugin-transform-regenerator](https://www.npmjs.com/package/babel-plugin-transform-regenerator) and [babel-plugin-syntax-async-functions](https://www.npmjs.com/package/babel-plugin-syntax-async-functions))
 
 **Note: This package originally shipped with the React preset, but to avoid bloat, doesn't any longer. If you want to add that, please install [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) too**
 
@@ -38,7 +39,7 @@ Install via NPM the usual way:
 
 Create a `.babelrc` file in your project root, and include 'node5' in your preset path:
 
-```
+```js
 {
   "presets": [
     "node5"
@@ -52,7 +53,7 @@ Now whenever you run `babel-node`, it will polyfill your app with the ES2015 fea
 `$ babel script.js --presets node5`
 
 ### Via Node API
-```
+```js
 require("babel-core").transform("code", {
   presets: ["node5"]
 });
@@ -72,7 +73,7 @@ Just grab it via NPM:
 
 And then add it to your "presets" list in `.babelrc`:
 
-```
+```js
 {
   "presets": [
     "node5",
@@ -80,6 +81,44 @@ And then add it to your "presets" list in `.babelrc`:
   ]
 }
 ```
+
+## How to use async/await
+
+The async/await proposal allows you to wait on a Promise, and write asynchronous code that looks synchronous.
+
+Here's an example:
+
+```js
+function async getUsers(howMany) {
+  try {
+    const response = await fetch(`http://jsonplaceholder.typicode.com/users/${howMany}`); // <-- a Promise
+    return response.json(); // <-- Another promise.
+  } catch(e) {
+    console.log('some kind of error occurred: ', e)
+  }
+}
+
+getUsers.then(body => {
+  // "body" contains the result of `response.json()`. Async functions *always*
+  // return a promise, even if that means wrapping a non-Promise in Promise.resolve
+})
+```
+
+In the above example, `fetch` returns a promise. By prefixing the function with `async` and prefixing every Promise with `await`, we avoid the typical `.then()` chain inside of the function block and can reason about the flow of the application a little more clearly.
+
+We can also wrap promises in `try/catch` blocks, instead of bolting on `.catch()` chains.
+
+The necessary babel plug-ins to use async/await are included in this package, so you can use this syntax right away.
+
+If you get an error like:
+
+`ReferenceError: regeneratorRuntime is not defined`
+
+... then `npm i -S babel-polyfill` into your project and add its bootstrapper to the top of your main script:
+
+`require('babel-polyfill');`
+
+This should add the missing `regeneratorRuntime`.
 
 ## No longer tracking Babel 6 versions
 
