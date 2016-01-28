@@ -21,7 +21,7 @@ The end result is nearly always a faster build and script execution time.
 * Default and rest parameters (via [babel-plugin-transform-es2015-parameters](https://www.npmjs.com/package/babel-plugin-transform-es2015-parameters))
 * Sticky RegEx (via [babel-plugin-transform-es2015-sticky-regex](https://www.npmjs.com/package/babel-plugin-transform-es2015-sticky-regex))
 * Unicode RegEx (via [babel-plugin-transform-es2015-unicode-regex](https://www.npmjs.com/package/babel-plugin-transform-es2015-unicode-regex))
-* Async/await (via [babel-plugin-transform-regenerator](https://www.npmjs.com/package/babel-plugin-transform-regenerator) and [babel-plugin-syntax-async-functions](https://www.npmjs.com/package/babel-plugin-syntax-async-functions))
+* Async/await (via [babel-plugin-transform-async-to-generator](https://www.npmjs.com/package/babel-plugin-transform-async-to-generator) and [babel-plugin-syntax-async-functions](https://www.npmjs.com/package/babel-plugin-syntax-async-functions))
 
 **Note: This package originally shipped with the React preset, but to avoid bloat, doesn't any longer. If you want to add that, please install [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) too**
 
@@ -109,16 +109,6 @@ In the above example, `fetch` returns a promise. By prefixing the function with 
 We can also wrap promises in `try/catch` blocks, instead of bolting on `.catch()` chains.
 
 The necessary babel plug-ins to use async/await are included in this package, so you can use this syntax right away.
-
-If you get an error like:
-
-`ReferenceError: regeneratorRuntime is not defined`
-
-... then `npm i -S babel-polyfill` into your project and add its bootstrapper to the top of your main script:
-
-`require('babel-polyfill');`
-
-This should add the missing `regeneratorRuntime`.
 
 ## No longer tracking Babel 6 versions
 
