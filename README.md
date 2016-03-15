@@ -54,11 +54,25 @@ Now whenever you run `babel-node`, it will polyfill your app with the ES2015 fea
 `$ babel script.js --presets node5`
 
 ### Via Node API
+
+If you don't want to use a project-wide `.babelrc` file (as above):
+
 ```js
 require("babel-core").transform("code", {
   presets: ["node5"]
 });
 ```
+
+And if you _do_, and you want to use vanilla `node` instead of `babel-node` as your CLI, you can create an entry script that references your pre-transpiled code like so:
+
+```js
+require('babel-register');
+require('path/to/es6/script');
+```
+
+... which will then run everywhere Node can.
+
+Of course, make sure to `npm i -S babel-core` or `npm i -S babel-register` respectively, to grab the NPM packages you'll need to transpile on-the-fly.
 
 ### Webpack, Gulp, Browserify, etc
 
