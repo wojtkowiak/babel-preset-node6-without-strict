@@ -112,8 +112,8 @@ async function getUsers(howMany) {
   }
 }
 
-getUsers.then(body => {
-  // "body" contains the result of `response.json()`. Async functions *always*
+getUsers(10).then(users => {
+  // "users" contains the result of `response.json()`. Async functions *always*
   // return a promise, even if that means wrapping a non-Promise in Promise.resolve
 })
 ```
