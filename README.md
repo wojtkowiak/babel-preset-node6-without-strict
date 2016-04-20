@@ -1,26 +1,24 @@
-# Babel 6.x presets for Node 6.x (updated regularly!)
+# Babel 6.x presets for Node 6.x
 
 Node 6.x comes with V8 v5.x which brings ~93% [native ES6/ES2015 coverage](https://kangax.github.io/compat-table/es6/#chrome50). This preset for Babel 6 attempts
 to bridge the gap for the much of the remaining 7% using [Babel plug-ins](https://github.com/babel/babel/tree/master/packages).
 
-## Motivation
+Last update based on [v6.0.0-rc.3](https://nodejs.org/download/rc/v6.0.0-rc.3/)
+
+## Why
 
 Babel 6.x is awesome, but simply including the [ES2015 preset](https://www.npmjs.com/package/babel-preset-es2015) means you're transpiling features
-that your Node 6.x installation can already do faster and natively, replacing them with inferior / old code.
+that your Node 6.x installation can already do faster and natively, replacing them with inferior / older code.
 
 This preset complements existing V8-native functionality - it doesn't work _around_ it.
 
 The end result is nearly always a faster build and script execution time.
 
-## Key features:
+## Included Plugins:
 
 * Removes trailing commas from function calls (via [babel-plugin-syntax-trailing-function-commas](https://www.npmjs.com/package/babel-plugin-syntax-trailing-function-commas))
 * CommonJS import/export module syntax ([babel-plugin-transform-es2015-modules-commonjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-commonjs))
 * Async/await (via [babel-plugin-transform-async-to-generator](https://www.npmjs.com/package/babel-plugin-transform-async-to-generator) and [babel-plugin-syntax-async-functions](https://www.npmjs.com/package/babel-plugin-syntax-async-functions))
-
-**Note: This package originally shipped with the React preset, but to avoid bloat, doesn't any longer. If you want to add that, please install [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) too**
-
-## Usage instructions
 
 ## Installation
 
@@ -42,7 +40,7 @@ Create a `.babelrc` file in your project root, and include 'node5' in your prese
 }
 ```
 
-Now whenever you run `babel-node`, it will polyfill your app with the ES2015 features that Node 5 is missing.
+Now whenever you run `babel-node`, it will polyfill your app with the remaining ES2015 features that Node 6 is missing.
 
 ### Via CLI
 `$ babel script.js --presets node6`
@@ -119,10 +117,6 @@ We can also wrap promises in `try/catch` blocks, instead of bolting on `.catch()
 
 The necessary babel plug-ins to use async/await are included in this package, so you can use this syntax right away.
 
-## No longer tracking Babel 6 versions
+## Credits
+Forked and updated from @leebenson 's [node5 preset.](https://github.com/leebenson/babel-preset-node5)
 
-This package originally tracked Babel 6.x versioning.  The problem is, many of the plug-ins and transforms provided by Babel don't always track the the `babel-core` version, so updating one dependency can throw the versioning schema off.
-
-This package will instead now follow its own semver, starting (arbitrarily) at v10.0.0.
-
-I'm using this repo in production, so you can be assured that I'm making it a priority to update Babel 6 deps regularly and track the latest plug-in versions.
