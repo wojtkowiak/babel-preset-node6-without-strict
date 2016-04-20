@@ -1,9 +1,9 @@
 # Babel 6.x presets for Node 6.x
 
-Node 6.x comes with V8 v5.x which brings ~93% [native ES6/ES2015 coverage](https://kangax.github.io/compat-table/es6/#chrome50). This preset for Babel 6 attempts
-to bridge the gap for the much of the remaining 7% using [Babel plug-ins](https://github.com/babel/babel/tree/master/packages).
+Node 6.x comes with V8 v5.x which brings [~93% native ES6/ES2015 coverage](https://kangax.github.io/compat-table/es6/#chrome50). This preset for Babel 6 attempts
+to bridge the gap for the much of the remaining ~7% using [Babel plug-ins](https://github.com/babel/babel/tree/master/packages).
 
-Last update based on [v6.0.0-rc.3](https://nodejs.org/download/rc/v6.0.0-rc.3/)
+Last update was based on [v6.0.0-rc.3](https://nodejs.org/download/rc/v6.0.0-rc.3/)
 
 ## Why
 
@@ -118,5 +118,5 @@ We can also wrap promises in `try/catch` blocks, instead of bolting on `.catch()
 The necessary babel plug-ins to use async/await are included in this package, so you can use this syntax right away.
 
 ## Credits
-Forked and updated from @leebenson 's [node5 preset.](https://github.com/leebenson/babel-preset-node5)
+Forked and updated from [@leebenson](https://github.com/leebenson/)'s [node5 preset.](https://github.com/leebenson/babel-preset-node5)
 
