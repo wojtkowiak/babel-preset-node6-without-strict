@@ -18,7 +18,6 @@ The end result is nearly always a faster build and script execution time.
 
 * Removes trailing commas from function calls (via [babel-plugin-syntax-trailing-function-commas](https://www.npmjs.com/package/babel-plugin-syntax-trailing-function-commas))
 * CommonJS import/export module syntax ([babel-plugin-transform-es2015-modules-commonjs](https://www.npmjs.com/package/babel-plugin-transform-es2015-modules-commonjs))
-* Async/await (via [babel-plugin-transform-async-to-generator](https://www.npmjs.com/package/babel-plugin-transform-async-to-generator) and [babel-plugin-syntax-async-functions](https://www.npmjs.com/package/babel-plugin-syntax-async-functions))
 
 ## Installation
 
@@ -88,34 +87,6 @@ And then add it to your "presets" list in `.babelrc`:
   ]
 }
 ```
-
-## How to use async/await
-
-The async/await proposal allows you to wait on a Promise, and write asynchronous code that looks synchronous.
-
-Here's an example:
-
-```js
-async function getUsers(howMany) {
-  try {
-    const response = await fetch(`http://jsonplaceholder.typicode.com/users/${howMany}`); // <-- a Promise
-    return response.json(); // <-- Another promise.
-  } catch(e) {
-    console.log('some kind of error occurred: ', e)
-  }
-}
-
-getUsers(10).then(users => {
-  // "users" contains the result of `response.json()`. Async functions *always*
-  // return a promise, even if that means wrapping a non-Promise in Promise.resolve
-})
-```
-
-In the above example, `fetch` returns a promise. By prefixing the function with `async` and prefixing every Promise with `await`, we avoid the typical `.then()` chain inside of the function block and can reason about the flow of the application a little more clearly.
-
-We can also wrap promises in `try/catch` blocks, instead of bolting on `.catch()` chains.
-
-The necessary babel plug-ins to use async/await are included in this package, so you can use this syntax right away.
 
 ## Credits
 Forked and updated from [@leebenson](https://github.com/leebenson/)'s [node5 preset.](https://github.com/leebenson/babel-preset-node5)
