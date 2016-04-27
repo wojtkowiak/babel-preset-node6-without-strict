@@ -3,7 +3,7 @@
 Node 6.x comes with V8 v5.x which brings [~93% native ES6/ES2015 coverage](https://kangax.github.io/compat-table/es6/#chrome50). This preset for Babel 6 attempts
 to bridge the gap for the much of the remaining ~7% using [Babel plug-ins](https://github.com/babel/babel/tree/master/packages).
 
-Last update was based on [v6.0.0-rc.3](https://nodejs.org/download/rc/v6.0.0-rc.3/)
+Based on Node.js [v6.0.0](https://nodejs.org/dist/v6.0.0/)
 
 ## Why
 
