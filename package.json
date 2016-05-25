@@ -1,8 +1,11 @@
 {
-  "name": "babel-preset-node6",
-  "version": "11.0.0",
-  "description": "Babel preset for Node 6.x (ES6 / ES2015)",
-  "repository": "git://github.com/salakar/babel-preset-node6.git",
+  "name": "babel-preset-node6-without-strict",
+  "version": "0.0.1",
+  "description": "Babel preset for Node 6.x (ES6 / ES2015) without strict",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wojtkowiak/babel-preset-node6-without-strict"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +18,7 @@
     "es2015",
     "es6"
   ],
-  "author": "Mike Diarmid <mike.diarmid@gmail.com>",
+  "author": "Bartosz Wojtkowiak <bartosz@wojtkowiak.it>",
   "license": "MIT",
   "dependencies": {
     "babel-plugin-syntax-trailing-function-commas": "^6.5.0",
